@@ -49,9 +49,8 @@ def save_user_profile(sender, instance, **kwargs):
 
 class Notice(models.Model):
 	heading=models.CharField(max_length=100,null=True,blank=True)
-	text=models.TextField(max_length=500,null=True,blank=True)
+	text=models.TextField(null=True,blank=True)
 	notice_date=models.DateField(null=True)
-
 
 	def __str__(self):
 		return(str(self.heading))

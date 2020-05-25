@@ -7,7 +7,9 @@ from django.core.files.storage import FileSystemStorage
 from .models import *
 
 def index(request):
-	return render(request,'ece/home.html')
+    notice = Notice.objects.all()
+    print(notice)
+    return render(request,'ece/home.html',{'notice':notice})
 
 def signup(request):
 	if request.method=='POST':
